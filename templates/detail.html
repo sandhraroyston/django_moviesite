@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="row">
+    <div class="col-md">
+<div class="card" style="width: 25rem;margin-left:15rem; ">
+  <img class="card-img-top" src="{{movie.img.url}}" height="400" width="250" alt="">
+  <div class="card-body">
+    <h5 class="card-title">{{movie.name}}</h5>
+
+    <a href="{% url 'movieapp:update' movie.id %}" class="btn btn-primary">Update</a>
+  </div>
+</div>
+    </div>
+    <div class="text-dark"">
+<div class="card-body" style="width: 25rem; margin-right:10rem;">
+    <div class="card-header "><h5 >{{movie.name}}</h5><br>
+    <p><i>Genre:{{movie.genre}},Released:</i>{{movie.year}}</p></div>
+    <p>{{movie.desc}}</p><hr>
+
+</div>
+
+</div>
+
+{% endblock %}

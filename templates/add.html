@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="name" class="text-dark" >Enter Movie Name:</label>
+        <div>
+            <input type="text" id="name" name="moviename" >
+        </div>
+    </div>
+        <div class="form-group">
+        <label for="desc" class="text-dark" >Enter Description:</label>
+           <div>
+           <textarea name="moviedesc" id="desc" rows="4" cols="50"></textarea>
+           </div>
+        </div>
+     <div class="form-group">
+        <label for="year" class="text-dark" >Enter Release Year:</label>
+           <div>
+           <input type="text" name="movieyear" id="year" >
+           </div>
+        </div>
+    <div class="form-group">
+        <label for="genre" class="text-dark" >Enter Movie Genre:</label>
+           <div>
+           <input type="text" name="moviegenre" id="genre" >
+           </div>
+        </div>
+      <div class="form-group">
+    <label for="img" class="text-dark">Attach Image File</label>
+    <input type="file" class="form-control-file" id="img" name="movieimg">
+  </div>
+  <div class="col-auto">
+      <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+    </div>
+
+
+</form>
+
+{% endblock %}
